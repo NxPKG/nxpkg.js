@@ -62,10 +62,3 @@ jobs:
           else
             echo "should_continue=false" >> $GITHUB_OUTPUT
           fi
-      - name: Send test data to Slack workflow
-        if: steps.summary_check.outputs.should_continue == 'true'
-        uses: slackapi/slack-github-action@v1.23.0
-        with:
-          payload-file-path: "./slack-payload.json"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.NEXT_TURBO_INTEGRATION_SLACK_WEBHOOK_URL }}
