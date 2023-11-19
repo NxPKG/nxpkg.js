@@ -1,6 +1,6 @@
 # A workflow supposed to run when there is a new release of Next.js.
 # This relies on next.js upstream's `repository_dispatch` workflow.
-name: Next.js Release
+name: nxpkg.js Release
 
 on:
   repository_dispatch:
@@ -26,7 +26,7 @@ jobs:
 
   # Trigger actual next.js integration tests.
   next_js_integration:
-    name: Execute Next.js integration workflow
+    name: Execute nxpkg.js integration workflow
     permissions:
       pull-requests: write
     uses: ./.github/workflows/nextjs-integration-test.yml
